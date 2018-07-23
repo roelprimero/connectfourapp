@@ -1,0 +1,7 @@
+Release Notes
+
+- Limitations:
+   [1] Yellow always comes first
+   [2] No AI capability
+   [3] Hard Coded algorithm for Column determination within the HTML canvas
+   [4] Brute Force checking of winner
