@@ -107,7 +107,7 @@ $(function() {
 		}			
 
 		function getValue(row, column){
-			if (row > 6 || row < 0 || column > 7 || column < 0 ) //detects out of boounds
+			if (row > 6 || row < 0 || column > 7 || column < 0 ) //detects out of bounds
 				return -1;
 
 			return cells[row][column]; //return value of the coordinate
@@ -134,12 +134,15 @@ $(function() {
 				}
 			}
 
-			//check diagonal 
+			//check diagonal  '/' and '\'
 			for (var i = 0; i < 6; i++) {         // height
 				for (var j = 0; j < 7; j++){      // column
-					var temp = getValue(i,j);
-					if (temp != -1 && temp != '' && (temp == getValue(i+1,j+1)) && (temp == getValue(i+2,j+2)) && (temp ==getValue(i+3,j+3))) {
-						return temp;
+					for(var offset = -1; offset <= 1 ; offset+=2 ){ //diagonals
+						var temp = getValue(i,j);
+						if (temp != -1 && temp != '' && (temp == getValue(i+1,j+1*offset)) && (temp == getValue(i+2,j+2*offset)) && (temp ==getValue(i+3,j+3*offset))) {
+							console.log("\/");
+							return temp;
+						}
 					}
 				}
 			}
