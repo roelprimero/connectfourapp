@@ -140,7 +140,6 @@ $(function() {
 					for(var offset = -1; offset <= 1 ; offset+=2 ){ //diagonals
 						var temp = getValue(i,j);
 						if (temp != -1 && temp != '' && (temp == getValue(i+1,j+1*offset)) && (temp == getValue(i+2,j+2*offset)) && (temp ==getValue(i+3,j+3*offset))) {
-							console.log("\/");
 							return temp;
 						}
 					}
@@ -148,7 +147,7 @@ $(function() {
 			}
 		}
 
-	//intially draw the disk	
+	//intial drawing of the disk	
 	drawDisks(); 
 	
 	//reference: http://www.informit.com/articles/article.aspx?p=1903884&seqNum=6
@@ -217,8 +216,7 @@ $(function() {
 		}
 
 
-		//draw
-		console.log(boardSetting.moveCounter);
+		//draw checker
 		if(boardSetting.moveCounter > 42){
 			$("#player").text("DRAW");
 			alert("It was a DRAW. Click OK for a new game");
