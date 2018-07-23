@@ -216,6 +216,15 @@ $(function() {
 			window.location.href=window.location.href;
 		}
 
+
+		//draw
+		console.log(boardSetting.moveCounter);
+		if(boardSetting.moveCounter > 42){
+			$("#player").text("DRAW");
+			alert("It was a DRAW. Click OK for a new game");
+			window.location.href=window.location.href;
+		}
+
 		};
 	}
 }(jQuery));
